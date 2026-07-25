@@ -13,6 +13,7 @@ import com.lidesheng.lyricinfo.providers.qishui.QishuiProvider
 import com.lidesheng.lyricinfo.providers.qqmusic.QQMusicProvider
 import com.lidesheng.lyricinfo.providers.saltplayer.SaltPlayerProvider
 import com.lidesheng.lyricinfo.providers.miuiplayer.MiuiPlayerProvider
+import com.lidesheng.lyricinfo.providers.kugou.KugouProvider
 
 class HookEntry : XposedModule() {
 
@@ -25,6 +26,7 @@ class HookEntry : XposedModule() {
             QishuiProvider(),
             SaltPlayerProvider(),
             MiuiPlayerProvider(),
+            KugouProvider(),
         )
     }
 
