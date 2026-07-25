@@ -231,10 +231,10 @@ object LyricNormalizer {
             val elrcLine = StringBuilder(lineTimeTag)
 
             // Text before the first inline tag (if any)
-            val leadingText = body.substring(0, tags[0].range.first).trim()
-            if (leadingText.isNotEmpty()) {
+            val leadingText = body.substring(0, tags[0].range.first)
+            if (leadingText.isNotBlank()) {
                 // Keep the line time tag for leading text
-                elrcLine.append(" ").append(lineTimeTag.replace("[", "<").replace("]", ">")).append(leadingText)
+                elrcLine.append(lineTimeTag.replace("[", "<").replace("]", ">")).append(leadingText)
             }
 
             for (i in tags.indices) {
