@@ -12,7 +12,7 @@
 * **网易云音乐** (`com.netease.cloudmusic`)
 * **QQ 音乐** (`com.tencent.qqmusic`)
 
-理论上支持任何原生集成了 OPPO 锁屏歌词特性的软件，酷狗音乐 (`com.kugou.android`)不会检测 `ro.build.version.oplus.api` ，新版本酷狗音乐在其他 OEM 上都会携带 lyricInfo 内容。
+理论上支持任何原生集成了 OPPO 锁屏歌词特性的软件，但取决于音乐软件自身的判断条件。
 
 ---
 
@@ -26,13 +26,14 @@
 | 网易云音乐 | `com.netease.cloudmusic` | YRC → elrc | EApi 加密接口 |
 | 荣耀定制版网易云 | `com.hihonor.cloudmusic` | YRC → elrc | 同上 |
 | QQ 音乐 | `com.tencent.qqmusic` | QRC → elrc | 3DES 加密接口 |
+| 酷狗音乐 | `com.kugou.android` | 原生获取 | 独立 Hook `SystemUtils` 绕过校验 |
+| 小米音乐 | `com.miui.player` | 内部解析 → elrc/lrc | Hook 内部歌词引擎 (MusicEngine) |
 | 汽水音乐 | `com.luna.music` | KRC → elrc | 读取本地缓存 KRC 文件 |
 | 椒盐音乐 | `com.salt.music` | 自动检测 → elrc/lrc | DexKit hook 内部歌词类 |
 
 ### 待适配
 | 应用 | 包名 | 备注 |
 |------|------|------|
-| 酷狗音乐 | `com.kugou.android` | 完整版尚未实现主动解析逻辑 |
 | 酷我音乐 | `cn.kuwo.player` | 完整版尚未实现主动解析逻辑 |
 | Apple Music | `com.apple.android.music` | 完整版尚未实现主动解析逻辑 |
 
