@@ -15,7 +15,7 @@ android {
     defaultConfig {
         minSdk = 29
         targetSdk = 37
-        versionCode = 2
+        versionCode = 3
         versionName = buildTimestamp
 
         ndk {
